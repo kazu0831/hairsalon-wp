@@ -1,0 +1,79 @@
+/*
+* Theme Name: Salon style
+* Author: kazu
+* Description: wordpress練習
+* Version: 1.0
+*/
+
+/* 共通レイアウト */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: gray;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+section {
+  margin-top: 48px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 48px;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+/* レスポンシブ */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  section {
+    margin-top: 96px;
+  }
+
+  h2 {
+    margin-bottom: 96px;
+  }
+
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    margin-top: 120px;
+  }
+
+  h2 {
+    margin-bottom: 120px;
+  }
+
+  .container {
+    max-width: 1024px;
+  }
+}
