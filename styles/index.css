@@ -102,6 +102,7 @@
 .news-date {
   font-size: 0.9rem;
   margin-right: 24px;
+  color: gray;
 }
 
 .news-noArticles {
@@ -196,7 +197,7 @@
 
   .features__item {
     display: flex;
-    margin-bottom: 48px;
+    margin-bottom: 96px;
     width: 100%;
     justify-content: space-between;
   }

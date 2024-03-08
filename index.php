@@ -5,7 +5,7 @@
     <?php get_header(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
     <?php get_template_part('navigation'); ?>
 
     <div class="container">
@@ -22,7 +22,7 @@
                 <div class="features__list">
                     <div class="features__item">
                         <div class="features__item-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/noimage.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/features1.jpg" alt="">
                         </div>
                         <div class="features__item-text">
                             <h3>安心できる空間</h3>
@@ -33,7 +33,7 @@
 
                     <div class="features__item features__item-reverse">
                         <div class="features__item-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/noimage.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/features2.jpg" alt="">
                         </div>
                         <div class="features__item-text">
                             <h3>絶対的な技術</h3>
@@ -44,7 +44,7 @@
 
                     <div class="features__item">
                         <div class="features__item-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/noimage.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/features3.jpg" alt="">
                         </div>
                         <div class="features__item-text">
                             <h3>信頼の実績</h3>
@@ -105,48 +105,31 @@
                 <h2>Staff</h2>
 
                 <div class="staff__wrap">
-                    <div class="staff__item">
-                        <a class="staff__link" href="#">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/staff1.jpg" alt="staff_profile" class="staff__img">
-                        </a>
+                    <?php $args = array(
+                        'post_type' => 'employee',
+                        'order' => 'DESC',
+                        'orderby' => 'modified'
+                    );
+                    $get_employee = new WP_Query($args);
+                    ?>
 
-                        <div class="staff__item-text">
-                            <span class="staff__name">
-                                田中
-                            </span>
-                            <span class="staff__career">
-                                歴10年
-                            </span>
-                        </div>
-                    </div>
-                    <div class="staff__item">
-                        <a class="staff__link" href="#">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/staff2.jpg" alt="staff_profile" class="staff__img">
-                        </a>
+                    <?php while ($get_employee->have_posts()) : $get_employee->the_post(); ?>
+                        <div class="staff__item">
+                            <a class="staff__link" href="<?php the_permalink(); ?>">
+                                <img src="<?php the_post_thumbnail_url(); ?>" alt="staff_profile" class="staff__img">
+                            </a>
 
-                        <div class="staff__item-text">
-                            <span class="staff__name">
-                                佐藤
-                            </span>
-                            <span class="staff__career">
-                                歴5年
-                            </span>
+                            <div class="staff__item-text">
+                                <span class="staff__name">
+                                    <?php the_title(); ?>
+                                </span>
+                                <span class="staff__career">
+                                    <?php $career = get_post_meta(get_the_ID(), '歴', true); ?>
+                                    <span>歴：<?php echo $career; ?></span>
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="staff__item">
-                        <a class="staff__link" href="#">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/staff3.jpg" alt="staff_profile" class="staff__img">
-                        </a>
-
-                        <div class="staff__item-text">
-                            <span class="staff__name">
-                                鈴木
-                            </span>
-                            <span class="staff__career">
-                                歴3年
-                            </span>
-                        </div>
-                    </div>
+                    <?php endwhile; ?>
                 </div>
             </section>
 
@@ -158,9 +141,9 @@
                         <ul class="news__list">
                             <?php while (have_posts()) : the_post(); ?>
                                 <li class="news__item">
-                                    <a class="news-date" href="#">
+                                    <span class="news-date">
                                         <?php the_time('Y-m-d'); ?>
-                                    </a>
+                                    </span>
                                     <a class="news-title" href="<?php the_permalink(); ?>">
                                         <?php
                                         if (mb_strlen($post->post_title, 'UTF-8') > 20) {

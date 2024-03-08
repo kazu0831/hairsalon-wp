@@ -3,7 +3,7 @@
 
 <head>
     <?php get_header(); ?>
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/single.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/employee.css">
 </head>
 
 <body <?php body_class(); ?>>
@@ -15,24 +15,32 @@
             <div class="container">
                 <main class="main">
 
-                    <section id="news">
-                        <h2 class="heading">News</h2>
+                    <section id="employee">
+                        <h2 class="heading">スタッフ紹介</h2>
 
-                        <div class="news__wrap">
-                            <div class="news__meta">
-                                <h3 class="news__title">
+                        <div class="employee__wrap">
+                            <div class="employee__meta">
+                                <h3 class="employee__title">
                                     <?php the_title(); ?>
                                 </h3>
 
-                                <div class="news__link">
-                                    <span class="news-date" href="#"><?php the_date(); ?></span>
-                                    <span class="news-author" href="#">by <?php the_author(); ?></span>
+                                <div class="employee__desc">
+                                    <?php $career = get_post_meta(get_the_ID(), '歴', true); ?>
+                                    <?php $position = get_post_meta(get_the_ID(), '役職', true); ?>
+                                    <div class='employee-career'>
+                                        <span>歴：</span>
+                                        <span><?php echo $career; ?></span>
+                                    </div>
+                                    <div class='employee-position'>
+                                        <span>役職：</span>
+                                        <span><?php echo $position; ?></span>
+                                    </div>
                                 </div>
                             </div>
 
                             <hr>
 
-                            <div class="news__content">
+                            <div class="employee__content">
                                 <?php the_content(); ?>
                             </div>
                         </div>
