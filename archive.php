@@ -61,6 +61,7 @@
             </section>
         </main>
     </div>
+    <?php get_template_part('toTop'); ?>
     <?php get_footer(); ?>
 </body>
 

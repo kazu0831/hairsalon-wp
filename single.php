@@ -71,6 +71,7 @@
     <?php else : ?>
         <p class="news-noArticles">記事がありません</p>
     <?php endif; ?>
+    <?php get_template_part('toTop'); ?>
     <?php get_footer(); ?>
 </body>
 
