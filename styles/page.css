@@ -1,0 +1,57 @@
+
+.fixed__wrap{
+  background-color: white;
+  border-radius: 2px;
+  color: black;
+  padding: 48px;
+}
+
+.fixed__wrap p{
+  margin-bottom: 24px;
+}
+
+.fixed__access{
+  width: 100%;
+}
+
+.fixed__map{
+  width: 100%;
+}
+
+.fixed__map iframe{
+  width: 100%;
+  height: 450px;
+}
+
+.fixed__pagination{
+  margin-top: 48px;
+}
+
+.fixed__pagination a{
+  color: gray;
+}
+
+.page-numbers{
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.page-numbers span{
+  padding: 12px;
+  border: 1px solid gray;
+}
+
+.page-numbers span.current{
+  background-color: black;
+  color: white;
+}
+
+.page-numbers .dots{
+  border: none;
+}
+
+.page-numbers a{
+  padding: 12px;
+  border: 1px solid gray;
+}

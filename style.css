@@ -21,6 +21,12 @@ a {
   text-decoration: none;
   color: white;
   cursor: pointer;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  opacity: 0.4;
 }
 
 li {
@@ -46,6 +52,136 @@ h2 {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 36px;
+}
+
+/* 予約ボタン */
+
+.book {
+  display: none;
+  position: relative;
+  padding: 14px;
+  outline: none;
+  transition: all 0.3s;
+  transition-delay: 0.5s;
+  background: rgba(255, 255, 255, 0.236);
+}
+
+.book:hover {
+  background: none;
+  opacity: 1;
+}
+
+.book span {
+  display: block;
+}
+
+.book::before,
+.book::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: all 0.2s linear;
+}
+
+.book span::before,
+.book span::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 0;
+  background: white;
+  transition: all 0.2s linear;
+}
+
+.book:hover::before,
+.book:hover::after {
+  width: 100%;
+}
+.book:hover span::before,
+.book:hover span::after {
+  height: 100%;
+}
+
+.border::before {
+  right: 0;
+  top: 0;
+  transition-delay: 0.2s;
+}
+.border::after {
+  left: 0;
+  bottom: 0;
+  transition-delay: 0.2s;
+}
+
+.border span::before {
+  left: 0;
+  top: 0;
+}
+.border span::after {
+  right: 0;
+  bottom: 0;
+}
+
+/* 固定予約ボタン */
+
+.fixed {
+  display: inline-block;
+  position: fixed;
+  z-index: 999;
+  bottom: 40px;
+  right: 20px;
+  background-color: black;
+  opacity: 0.85;
+}
+
+.fixed:hover {
+  background: black;
+  opacity: 1;
+}
+
+.js-hide {
+  visibility: hidden;
+}
+
+/* TOPに戻るボタン */
+
+#page-top {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  font-size: 14px;
+  line-height: 1;
+}
+#page-top a {
+  color: white;
+  border: 1px solid white;
+  width: 60px;
+  padding: 28px 5px;
+  text-align: center;
+  display: block;
+  border-radius: 90px;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+#page-top a:hover {
+  opacity: 0.5;
+}
+
+/* フェードイン */
+
+.js-fade {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+.scroll {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
 }
 
 /* レスポンシブ */
@@ -75,5 +211,9 @@ h2 {
 
   .container {
     max-width: 1024px;
+  }
+
+  .book {
+    display: inline-block;
   }
 }

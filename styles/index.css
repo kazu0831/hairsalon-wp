@@ -20,10 +20,6 @@
   display: none;
 }
 
-.book {
-  display: none;
-}
-
 /* メインビジュアル */
 
 .mainvisual {
@@ -77,6 +73,8 @@
 
 .staff__item-text {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* newsセクション */
@@ -102,6 +100,7 @@
 .news-date {
   font-size: 0.9rem;
   margin-right: 24px;
+  color: gray;
 }
 
 .news-noArticles {
@@ -142,6 +141,7 @@
 /* footer */
 
 .footer {
+  position: relative;
   margin-top: 96px;
   border-top: 1px solid white;
   height: 128px;
@@ -175,11 +175,7 @@
   .navigation__list {
     display: flex;
   }
-  .book {
-    display: inline-block;
-    border: 1px solid white;
-    padding: 14px;
-  }
+
   .navigation__item {
     margin-right: 20px;
   }
@@ -196,7 +192,7 @@
 
   .features__item {
     display: flex;
-    margin-bottom: 48px;
+    margin-bottom: 96px;
     width: 100%;
     justify-content: space-between;
   }

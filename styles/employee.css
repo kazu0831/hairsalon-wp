@@ -1,0 +1,37 @@
+.employee__wrap {
+  color: black;
+  min-height: 400px;
+  background-color: white;
+  border-radius: 2px;
+  padding: 24px;
+}
+
+.employee__wrap a {
+  color: black;
+}
+
+.employee__title {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 24px 0;
+}
+
+.employee__desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.employee__content {
+  margin-top: 96px;
+}
+
+.employee__content img {
+  margin-bottom: 96px;
+}
+
+.employee__content p {
+  margin-bottom: 24px;
+}
