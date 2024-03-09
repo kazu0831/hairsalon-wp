@@ -15,7 +15,7 @@
             <div class="container">
                 <main class="main">
 
-                    <section id="news">
+                    <section id="news" class='start'>
                         <h2 class="heading">News</h2>
 
                         <div class="news__wrap">
@@ -38,7 +38,7 @@
                         </div>
                     </section>
 
-                    <section id="access">
+                    <section id="access" class='end'>
                         <h2>Access</h2>
                         <div class="access__wrap">
                             <div class="access__map">
@@ -71,7 +71,7 @@
     <?php else : ?>
         <p class="news-noArticles">記事がありません</p>
     <?php endif; ?>
-    <?php get_template_part('toTop'); ?>
+    <?php get_template_part('booking'); ?>
     <?php get_footer(); ?>
 </body>
 

@@ -11,7 +11,7 @@
 
     <div class="container">
         <main class="main">
-            <section class='fixed'>
+            <section class='archive start'>
                 <h2 class="heading">
                     News
                 </h2>
@@ -51,7 +51,7 @@
                 </div>
             </section>
 
-            <section id="fixed__access">
+            <section id="fixed__access" class='end'>
 
                 <h2>Access</h2>
 
@@ -61,7 +61,7 @@
             </section>
         </main>
     </div>
-    <?php get_template_part('toTop'); ?>
+    <?php get_template_part('booking'); ?>
     <?php get_footer(); ?>
 </body>
 

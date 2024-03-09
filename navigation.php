@@ -24,7 +24,6 @@
     <div class="logo">
         <a class="logo__text" href="<?php echo esc_url(home_url()); ?>">Kz-salon</a>
     </div>
-
     <a href="<?php echo esc_url(home_url()); ?>/booking/" class="book border">
         <span>ご予約はこちら</span>
     </a>

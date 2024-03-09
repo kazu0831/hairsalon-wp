@@ -20,74 +20,6 @@
   display: none;
 }
 
-.book {
-  display: none;
-  position: relative;
-  padding: 14px;
-  outline: none;
-  transition: all 0.3s;
-  transition-delay: 0.5s;
-  background: rgba(255, 255, 255, 0.236);
-}
-
-.book:hover{
-  background: none;
-  opacity: 1;
-}
-
-.book span{
-  display: block;
-}
-
-.book::before,
-.book::after{
-    content:""; 
-    position: absolute; 
-    width: 0;
-    height: 1px;
-    background: white;
-    transition: all 0.2s linear;
-}
-
-.book span::before,
-.book span::after{
-    content:"";
-    position: absolute;
-    width:1px;
-    height:0;
-    background: white;
-    transition: all 0.2s linear;
-}
-
-.book:hover::before,
-.book:hover::after{
-    width: 100%;
-}
-.book:hover span::before,
-.book:hover span::after{
-    height: 100%;
-}
-
-.border::before{
-    right: 0;
-    top: 0;
-    transition-delay: 0.2s;
-}
-.border::after{
-    left: 0;
-    bottom: 0;
-    transition-delay: 0.2s;
-}
-
-.border span::before{
-    left: 0;
-    top: 0;
-}
-.border span::after{
-    right: 0;
-    bottom: 0;
-}
-
 /* メインビジュアル */
 
 .mainvisual {
@@ -141,6 +73,8 @@
 
 .staff__item-text {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* newsセクション */
@@ -207,6 +141,7 @@
 /* footer */
 
 .footer {
+  position: relative;
   margin-top: 96px;
   border-top: 1px solid white;
   height: 128px;
@@ -226,32 +161,6 @@
   text-align: center;
 }
 
-/* TOPに戻るボタン */
-
-#page-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 14px;
-  line-height: 1;
-  z-index: 99;
-}
-#page-top a {
-  background: white;
-  color: black;
-  width: 60px;
-  padding: 28px 5px;
-  text-align: center;
-  display: block;
-  border-radius: 90px;
-  opacity: 1;
-  transition: all 0.4s ease;
-}
-#page-top a:hover {
-  background: black;
-  color: white;
-}
-
 /* レスポンシブ */
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -265,9 +174,6 @@
   /* ヘッダー */
   .navigation__list {
     display: flex;
-  }
-  .book {
-    display: inline-block;
   }
 
   .navigation__item {

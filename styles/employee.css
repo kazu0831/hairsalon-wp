@@ -25,5 +25,13 @@
 }
 
 .employee__content {
-  margin-top: 48px;
+  margin-top: 96px;
+}
+
+.employee__content img {
+  margin-bottom: 96px;
+}
+
+.employee__content p {
+  margin-bottom: 24px;
 }

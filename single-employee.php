@@ -15,7 +15,7 @@
             <div class="container">
                 <main class="main">
 
-                    <section id="employee">
+                    <section id="employee" class='start'>
                         <h2 class="heading">スタッフ紹介</h2>
 
                         <div class="employee__wrap">
@@ -41,12 +41,13 @@
                             <hr>
 
                             <div class="employee__content">
+                                <?php the_post_thumbnail(); ?>
                                 <?php the_content(); ?>
                             </div>
                         </div>
                     </section>
 
-                    <section id="access">
+                    <section id="access" class='end'>
                         <h2>Access</h2>
                         <div class="access__wrap">
                             <div class="access__map">
@@ -79,7 +80,7 @@
     <?php else : ?>
         <p class="news-noArticles">記事がありません</p>
     <?php endif; ?>
-    <?php get_template_part('toTop'); ?>
+    <?php get_template_part('booking'); ?>
     <?php get_footer(); ?>
 </body>
 

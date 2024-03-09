@@ -16,12 +16,12 @@
             </div>
 
 
-            <section id="features">
+            <section id="features" class='start'>
                 <h2 class="heading">Features</h2>
 
                 <div class="features__list">
                     <div class="features__item">
-                        <div class="features__item-img">
+                        <div class="features__item-img js-fade">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/features1.jpg" alt="">
                         </div>
                         <div class="features__item-text">
@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="features__item features__item-reverse">
-                        <div class="features__item-img">
+                        <div class="features__item-img js-fade">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/features2.jpg" alt="">
                         </div>
                         <div class="features__item-text">
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="features__item">
-                        <div class="features__item-img">
+                        <div class="features__item-img js-fade">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/features3.jpg" alt="">
                         </div>
                         <div class="features__item-text">
@@ -58,7 +58,7 @@
             <section id="price">
                 <h2>Price</h2>
 
-                <div class="price__field">
+                <div class="price__field js-fade">
                     <div class="price__field-1">
                         <ul class="price__list">
                             <li class="price__item menu">CUT</li>
@@ -104,10 +104,10 @@
             <section id="staff">
                 <h2>Staff</h2>
 
-                <div class="staff__wrap">
+                <div class="staff__wrap js-fade">
                     <?php $args = array(
                         'post_type' => 'employee',
-                        'order' => 'DESC',
+                        'order' => 'ASC',
                         'orderby' => 'modified'
                     );
                     $get_employee = new WP_Query($args);
@@ -136,7 +136,7 @@
             <section id="news">
                 <h2>News</h2>
 
-                <div class="news__wrap">
+                <div class="news__wrap js-fade">
                     <?php if (have_posts()) : ?>
                         <ul class="news__list">
                             <?php while (have_posts()) : the_post(); ?>
@@ -163,10 +163,10 @@
                 </div>
             </section>
 
-            <section id="access">
+            <section id="access" class='end'>
                 <h2>Access</h2>
 
-                <div class="access__wrap">
+                <div class="access__wrap js-fade">
                     <div class="access__map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3240.491713393053!2d139.689157375635!3d35.68951562258455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z5p2x5Lqs6YO95bqB!5e0!3m2!1sja!2sjp!4v1709525953272!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -193,7 +193,7 @@
         </main>
     </div>
 
-    <?php get_template_part('toTop'); ?>
+    <?php get_template_part('booking'); ?>
     <?php get_footer(); ?>
 </body>
 

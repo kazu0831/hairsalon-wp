@@ -14,7 +14,7 @@
 
             <div class="container">
                 <main class="main">
-                    <section class='fixed'>
+                    <section class='page'>
                         <h2 class="heading">
                             <?php the_title(); ?>
                         </h2>
@@ -39,7 +39,6 @@
     <?php else : ?>
         <p class="news-noArticles">記事がありません</p>
     <?php endif; ?>
-    <?php get_template_part('toTop'); ?>
     <?php get_footer(); ?>
 </body>
 

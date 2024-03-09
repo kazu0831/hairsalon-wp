@@ -14,27 +14,52 @@ $(function () {
 // topに戻る
 $(function(){
     let toTop = $('#page-top');
-    toTop.hide();
-
-    $(window).scroll(function(){
-        if($(this).scrollTop()>200){
-            toTop.fadeIn(600);
-        }else{
-            toTop.fadeOut(600);
-        }
-    });
-
+    
     toTop.click(function(){
-        $('html, body').animate({ scrollTop: targetPos }, 400);
+        $('html, body').animate({ scrollTop: 0 }, 400);
         return false;
     });
 });
 
-// ハンバーガーメニュー
+// 予約ボタン
 
-    //あとで実装
+$(function(){
+    let booking = $('.fixed');
 
-    
-// ふわっと表示
+    $(window).on('scroll touchmove', function(){
+        booking.stop();
+        booking.css("display", "none").delay(100).fadeIn(600);
+    })
+})
 
-    //あとで実装
+$(function(){
+    let distance = 0;
+    let start = $('.start').offset().top;
+    let end = $('.end').offset().top;
+
+    $(document).scroll(function(){
+        distance = $(this).scrollTop();
+        $('.fixed').removeClass('js-hide');
+        if(start > distance || distance > end){
+            $('.fixed').addClass('js-hide');
+        }else{
+            $('.fixed').removeClass('js-hide')
+        }
+    })
+})
+
+  
+// フェードイン
+
+$(function(){
+    $(window).scroll(function(){
+        $('.js-fade').each(function(){
+            let posistion = $(this).offset().top;
+            let scroll = $(window).scrollTop();
+            let windowHeight = $(window).height();
+            if(scroll > posistion - windowHeight + 100){
+                $(this).addClass('scroll');
+            }
+        })
+    })
+})

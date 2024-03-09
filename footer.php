@@ -8,5 +8,6 @@
 
         <p>&copy; Kz-salon</p>
     </div>
+    <?php get_template_part('toTop'); ?>
 </footer>
 <?php wp_footer(); ?>
